@@ -2,6 +2,8 @@
 #
 # Annual summary of call destination by count and duration.
 #
+# Example output: https://gist.github.com/technmsg/8247872
+#
 
 CDR="asterisk-cdr-csv.csv"
 TOP=5
@@ -9,30 +11,6 @@ TOPX='head -'${TOP}
 SORT='sort -t( -nr -k2'
 
 DST_WEBEX="(6504793208|8776684493)"
-
-# Example output:
-#
-# $ ./annual_summary.sh 2013
-#
-# == 2013 ==
-#
-# Total Calls: 181 (2470 mins)
-# WebEx Calls: 60 (1464 mins)
-#
-# Top 5 Destinations (count)
-#   46 "16504793208"
-#   13 "18776684493"
-#    7 "1410REMOVED"
-#    6 "1410CLEANED"
-#    5 "1605EXAMPLE"
-# 
-# Top 5 Destinations (minutes)
-# 1024 "16504793208"
-#  439 "18776684493"
-#   89 "1641REMOVED"
-#   80 "1571CLEANED"
-#   71 "1888EXAMPLE"
-#
 
 # Pick a year or bunch of years.
 if [ -z $@ ] ; then
